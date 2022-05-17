@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Parallax"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/header.html',{})
+		<main>
+			<section class="parallax">
+				<img src="@img/stars.png" alt="stars" id="stars">
+				<img src="@img/stars2.png" alt="stars" id="stars2">
+				<img src="@img/moon.png" alt="moon" id="moon">
+				<h2 id="text">Hi There!!!</h2>
+				<img src="@img/rock.png" alt="rock" id="rock">
+				<img src="@img/masjid.png" alt="masjid" id="masjid">
+				<img src="@img/bottom.png" alt="bottom" id="bottom">
+				<img src="@img/lamp.png" alt="lamp" id="lamp">
+			</section>
+			<section class="text">
+				<div class="container">
+					<h2>Parallax</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet libero dolor unde architecto
+						facere exercitationem? Sapiente, mollitia, consectetur odio architecto et possimus, eaque minima
+						quis quas harum aspernatur explicabo dolorem sint quibusdam dolore ab quae esse dicta corporis
+						ad quidem? Accusantium molestias perferendis, veritatis voluptatibus cupiditate ea. Illum
+						dolorum tempora ullam officia quasi, blanditiis ab architecto, non excepturi nisi perspiciatis
+						atque explicabo iusto debitis! Itaque dolore incidunt explicabo facere consequatur voluptates
+						odit odio, repellendus id perspiciatis similique quidem laborum officiis beatae ducimus rerum
+						hic. Veniam, aliquam. Temporibus, minima pariatur nobis eligendi praesentium autem tenetur porro
+						minus ad reprehenderit perspiciatis.
+					</p>
+					<br>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet libero dolor unde architecto
+						facere exercitationem? Sapiente, mollitia, consectetur odio architecto et possimus, eaque minima
+						quis quas harum aspernatur explicabo dolorem sint quibusdam dolore ab quae esse dicta corporis
+						ad quidem? Accusantium molestias perferendis, veritatis voluptatibus cupiditate ea. Illum
+						dolorum tempora ullam officia quasi, blanditiis ab architecto, non excepturi nisi perspiciatis
+						atque explicabo iusto debitis! Itaque dolore incidunt explicabo facere consequatur voluptates
+						odit odio, repellendus id perspiciatis similique quidem laborum officiis beatae ducimus rerum
+						hic. Veniam, aliquam. Temporibus, minima pariatur nobis eligendi praesentium autem tenetur porro
+						minus ad reprehenderit perspiciatis.
+					</p>
+					<br>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet libero dolor unde architecto
+						facere exercitationem? Sapiente, mollitia, consectetur odio architecto et possimus, eaque minima
+						quis quas harum aspernatur explicabo dolorem sint quibusdam dolore ab quae esse dicta corporis
+						ad quidem? Accusantium molestias perferendis, veritatis voluptatibus cupiditate ea. Illum
+						dolorum tempora ullam officia quasi, blanditiis ab architecto, non excepturi nisi perspiciatis
+						atque explicabo iusto debitis! Itaque dolore incidunt explicabo facere consequatur voluptates
+						odit odio, repellendus id perspiciatis similique quidem laborum officiis beatae ducimus rerum
+						hic. Veniam, aliquam. Temporibus, minima pariatur nobis eligendi praesentium autem tenetur porro
+						minus ad reprehenderit perspiciatis.
+					</p>
+
+				</div>
+
+			</section>
+
+		</main>
+		@@include('html/footer.html',{})
+	</div>
+	<script>
+		let stars = document.getElementById('stars');
+		let stars2 = document.getElementById('stars2');
+		let moon = document.getElementById('moon');
+		let rock = document.getElementById('rock');
+		let masjid = document.getElementById('masjid');
+		let text = document.getElementById('text');
+		let header = document.getElementById('header');
+
+		window.addEventListener('scroll', () => {
+			let value = window.scrollY;
+
+			// stars.style.transform = value * 0.05 + '%';
+			stars.style.transform = `translateY(-${value*0.05}%)`;
+			stars2.style.transform = `translateY(-${value*0.15}%)`;
+			moon.style.transform = `translateY(${value*0.15}%)`;
+			rock.style.transform = `translateY(${value*0.1}%)`;
+			masjid.style.transform = `translateY(${value*0.05}%)`;
+
+			text.style.transform =`translateX(${110-value*0.6}%)`;
+			
+			text.style.transform =`translateY(${-50+value*0.6}%)`;
+			text.style.transform =`translate(${110-value*0.6}%,${-40+value*0.4}%)`;
+
+
+			header.style.transform = `translateY(${value*0.1}%)`;
+		})
+
+	</script>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>

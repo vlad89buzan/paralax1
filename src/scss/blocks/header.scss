@@ -1,0 +1,44 @@
+
+.header {
+position: absolute;
+z-index: 5;
+top: 0;
+left: 0;
+width: 100%;
+    &__logo {
+        color: $whitecolor;
+        font-size: 24px;
+    }
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        padding: 30px 100px;
+        @media (max-width:$bp992) {
+            padding: 30px;
+        }
+    }
+}
+
+.menu {
+
+   
+
+    &__link {
+        color: $whitecolor;
+        padding: 6px 15px;
+        border-radius: 20px;
+        transition: 0.4s;
+        &:hover{
+            background: $whitecolor;
+            color: $blackcolor;
+        }
+        &.active{
+            background: $whitecolor;
+            color: $blackcolor;
+
+        }
+    }
+}

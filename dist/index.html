@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220517154028">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&_v=20220517154028" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Rancho:regular&_v=20220517154028" rel="stylesheet" />
+	<title>Parallax</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header" id="header">
+    <div class="container">
+        <a href="#" class="header__logo">Logo</a>
+        <div class="header__menu menu">
+            <div class="menu__icon"><span></span></div>
+            <nav class="menu__body">
+                <ul class="menu__list">
+                    <li><a class="menu__link active" href="#">Home</a></li>
+                    <li><a class="menu__link" href="#">How it works</a></li>
+                    <li><a class="menu__link" href="#">Our blog</a></li>
+                    <li><a class="menu__link" href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+		<main>
+			<section class="parallax">
+				<picture><source srcset="img/stars.webp" type="image/webp"><img src="img/stars.png" alt="stars" id="stars"></picture>
+				<picture><source srcset="img/stars2.webp" type="image/webp"><img src="img/stars2.png" alt="stars" id="stars2"></picture>
+				<picture><source srcset="img/moon.webp" type="image/webp"><img src="img/moon.png" alt="moon" id="moon"></picture>
+				<h2 id="text">Hi There!!!</h2>
+				<picture><source srcset="img/rock.webp" type="image/webp"><img src="img/rock.png" alt="rock" id="rock"></picture>
+				<picture><source srcset="img/masjid.webp" type="image/webp"><img src="img/masjid.png" alt="masjid" id="masjid"></picture>
+				<picture><source srcset="img/bottom.webp" type="image/webp"><img src="img/bottom.png" alt="bottom" id="bottom"></picture>
+				<picture><source srcset="img/lamp.webp" type="image/webp"><img src="img/lamp.png" alt="lamp" id="lamp"></picture>
+			</section>
+			<section class="text">
+				<div class="container">
+					<h2>Parallax</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet libero dolor unde architecto
+						facere exercitationem? Sapiente, mollitia, consectetur odio architecto et possimus, eaque minima
+						quis quas harum aspernatur explicabo dolorem sint quibusdam dolore ab quae esse dicta corporis
+						ad quidem? Accusantium molestias perferendis, veritatis voluptatibus cupiditate ea. Illum
+						dolorum tempora ullam officia quasi, blanditiis ab architecto, non excepturi nisi perspiciatis
+						atque explicabo iusto debitis! Itaque dolore incidunt explicabo facere consequatur voluptates
+						odit odio, repellendus id perspiciatis similique quidem laborum officiis beatae ducimus rerum
+						hic. Veniam, aliquam. Temporibus, minima pariatur nobis eligendi praesentium autem tenetur porro
+						minus ad reprehenderit perspiciatis.
+					</p>
+					<br>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet libero dolor unde architecto
+						facere exercitationem? Sapiente, mollitia, consectetur odio architecto et possimus, eaque minima
+						quis quas harum aspernatur explicabo dolorem sint quibusdam dolore ab quae esse dicta corporis
+						ad quidem? Accusantium molestias perferendis, veritatis voluptatibus cupiditate ea. Illum
+						dolorum tempora ullam officia quasi, blanditiis ab architecto, non excepturi nisi perspiciatis
+						atque explicabo iusto debitis! Itaque dolore incidunt explicabo facere consequatur voluptates
+						odit odio, repellendus id perspiciatis similique quidem laborum officiis beatae ducimus rerum
+						hic. Veniam, aliquam. Temporibus, minima pariatur nobis eligendi praesentium autem tenetur porro
+						minus ad reprehenderit perspiciatis.
+					</p>
+					<br>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet libero dolor unde architecto
+						facere exercitationem? Sapiente, mollitia, consectetur odio architecto et possimus, eaque minima
+						quis quas harum aspernatur explicabo dolorem sint quibusdam dolore ab quae esse dicta corporis
+						ad quidem? Accusantium molestias perferendis, veritatis voluptatibus cupiditate ea. Illum
+						dolorum tempora ullam officia quasi, blanditiis ab architecto, non excepturi nisi perspiciatis
+						atque explicabo iusto debitis! Itaque dolore incidunt explicabo facere consequatur voluptates
+						odit odio, repellendus id perspiciatis similique quidem laborum officiis beatae ducimus rerum
+						hic. Veniam, aliquam. Temporibus, minima pariatur nobis eligendi praesentium autem tenetur porro
+						minus ad reprehenderit perspiciatis.
+					</p>
+
+				</div>
+
+			</section>
+
+		</main>
+		<footer></footer>
+	</div>
+	<script>
+		let stars = document.getElementById('stars');
+		let stars2 = document.getElementById('stars2');
+		let moon = document.getElementById('moon');
+		let rock = document.getElementById('rock');
+		let masjid = document.getElementById('masjid');
+		let text = document.getElementById('text');
+		let header = document.getElementById('header');
+
+		window.addEventListener('scroll', () => {
+			let value = window.scrollY;
+
+			// stars.style.transform = value * 0.05 + '%';
+			stars.style.transform = `translateY(-${value*0.05}%)`;
+			stars2.style.transform = `translateY(-${value*0.15}%)`;
+			moon.style.transform = `translateY(${value*0.15}%)`;
+			rock.style.transform = `translateY(${value*0.1}%)`;
+			masjid.style.transform = `translateY(${value*0.05}%)`;
+
+			text.style.transform =`translateX(${110-value*0.6}%)`;
+			
+			text.style.transform =`translateY(${-50+value*0.6}%)`;
+			text.style.transform =`translate(${110-value*0.6}%,${-40+value*0.4}%)`;
+
+
+			header.style.transform = `translateY(${value*0.1}%)`;
+		})
+
+	</script>
+	<script src="js/app.min.js?_v=20220517154028"></script>
+</body>
+
+</html>

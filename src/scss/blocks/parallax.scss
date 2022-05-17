@@ -1,0 +1,45 @@
+.parallax {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+  }
+  #stars2 {
+    display: none;
+    @media (max-width: $bp992) {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  #lamp {
+    mix-blend-mode: screen;
+  }
+  #masjid {
+    transform: translateY(-20px);
+    @media (max-width: $bp992){
+        transform: translateY(-5px);
+    }
+  }
+  #text {
+    color: $whitecolor;
+    font-size: 10vw;
+    white-space: nowrap;
+    text-shadow: 0 15px 10px rgba(0, 0, 0, 0.25);
+    font-family: "Rancho";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-40%);
+    transform: translateX(110%);
+  }
+}
